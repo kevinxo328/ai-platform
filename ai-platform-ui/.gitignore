@@ -1,0 +1,23 @@
+node_modules
+build
+.env*
+!.env.example
+.idea
+.vscode
+dist
+build.zip
+
+# Build Scripts
+local-build.sh
+local-build.bat
+local-build.*.sh
+local-build.*.bat
+!local-build.template.bat
+!local-build.template.sh
+cloud-build.sh
+cloud-build.bat
+cloud-build.*.sh
+cloud-build.*.bat
+!cloud-build.template.bat
+!cloud-build.template.sh
+
