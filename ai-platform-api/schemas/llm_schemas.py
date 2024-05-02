@@ -16,6 +16,7 @@ class ReqChatBase(BaseModel):
 
 class LLMTypeEnum(str, Enum):
     GEMINI = "gemini"
+    GROQ = "groq"
     AOAI = "aoai"
 
 
