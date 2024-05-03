@@ -3,7 +3,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers import gemini, groq, llm, prompts, sql
 from starlette.responses import RedirectResponse
 
-prefix = ""
+prefix = "/api"
 
 app = FastAPI(docs_url=f"{prefix}/docs", openapi_url=f"{prefix}/openapi.json")
 
