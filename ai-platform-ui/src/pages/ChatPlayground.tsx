@@ -373,7 +373,7 @@ const ChatPlayground = () => {
                                       {value
                                         .filter(
                                           (model) =>
-                                            /gpt|gemini/.test(
+                                            !/embedding|legacy|vision|question/.test(
                                               model.model.toLowerCase()
                                             ) &&
                                             !/vision/.test(
