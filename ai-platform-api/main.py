@@ -3,7 +3,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from routers import gemini, groq, llm, prompts, sql
 from starlette.responses import RedirectResponse
 
-app = FastAPI(docs_url="/api/docs", openapi_url="/api/openapi.json")
+prefix = ""
+
+app = FastAPI(docs_url=f"{prefix}/docs", openapi_url=f"{prefix}/openapi.json")
 
 app.add_middleware(
     CORSMiddleware,
@@ -17,16 +19,16 @@ router = APIRouter()
 
 
 @router.get("/", include_in_schema=False)
-def root():
+async def root():
     return RedirectResponse("docs")
 
 
-app.include_router(router)
-# app.include_router(router=gemini.router, prefix="/api")
-# app.include_router(router=llm.router, prefix="/api")
-# app.include_router(router=prompts.router, prefix="/api")
-# app.include_router(router=sql.router, prefix="/api")
-# app.include_router(router=groq.router, prefix="/api")
+app.include_router(router, prefix=prefix)
+app.include_router(router=gemini.router, prefix=prefix)
+app.include_router(router=llm.router, prefix=prefix)
+app.include_router(router=prompts.router, prefix=prefix)
+app.include_router(router=sql.router, prefix=prefix)
+app.include_router(router=groq.router, prefix=prefix)
 # app.include_router(openai.router, prefix="/api")
 # app.include_router(faiss.router, prefix="/api")
 # app.include_router(files.router, prefix="/api")
