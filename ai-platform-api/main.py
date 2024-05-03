@@ -17,7 +17,7 @@ router = APIRouter()
 
 
 @router.get("/", include_in_schema=False)
-async def root():
+def root():
     return RedirectResponse("docs")
 
 
