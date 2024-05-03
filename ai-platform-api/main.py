@@ -18,16 +18,15 @@ router = APIRouter()
 
 @router.get("/", include_in_schema=False)
 async def root():
-    return {"message": "Hello World"}
-    # return RedirectResponse("docs")
+    return RedirectResponse("docs")
 
 
 app.include_router(router)
-app.include_router(router=gemini.router, prefix="/api")
-app.include_router(router=llm.router, prefix="/api")
-app.include_router(router=prompts.router, prefix="/api")
-app.include_router(router=sql.router, prefix="/api")
-app.include_router(router=groq.router, prefix="/api")
+# app.include_router(router=gemini.router, prefix="/api")
+# app.include_router(router=llm.router, prefix="/api")
+# app.include_router(router=prompts.router, prefix="/api")
+# app.include_router(router=sql.router, prefix="/api")
+# app.include_router(router=groq.router, prefix="/api")
 # app.include_router(openai.router, prefix="/api")
 # app.include_router(faiss.router, prefix="/api")
 # app.include_router(files.router, prefix="/api")
