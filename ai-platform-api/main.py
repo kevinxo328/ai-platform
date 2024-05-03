@@ -18,7 +18,8 @@ router = APIRouter()
 
 @router.get("/", include_in_schema=False)
 async def root():
-    return RedirectResponse("docs")
+    # return RedirectResponse("docs")
+    return {"message": "Welcome to the AI Platform API"}
 
 
 app.include_router(router, prefix="/api")
