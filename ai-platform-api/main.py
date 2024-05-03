@@ -18,11 +18,11 @@ router = APIRouter()
 
 @router.get("/", include_in_schema=False)
 async def root():
+    return {"message": "Hello World"}
     # return RedirectResponse("docs")
-    return {"message": "Welcome to the AI Platform API"}
 
 
-app.include_router(router, prefix="/api")
+app.include_router(router)
 app.include_router(router=gemini.router, prefix="/api")
 app.include_router(router=llm.router, prefix="/api")
 app.include_router(router=prompts.router, prefix="/api")
