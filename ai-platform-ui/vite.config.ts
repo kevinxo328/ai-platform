@@ -15,7 +15,7 @@ export default defineConfig({
     commonjsOptions: {
       transformMixedEsModules: true,
     },
-    outDir: "build",
+    outDir: "dist",
   },
   server: {
     host: true, // needed for the Docker Container port mapping to work
