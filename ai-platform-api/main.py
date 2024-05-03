@@ -31,3 +31,9 @@ app.include_router(router=groq.router, prefix="/api")
 # app.include_router(faiss.router, prefix="/api")
 # app.include_router(files.router, prefix="/api")
 # app.include_router(translator.router, prefix="/api")
+
+# add for vercel
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app)
